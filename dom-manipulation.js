@@ -17,7 +17,7 @@ createGrid()
 const squares = document.querySelectorAll('.grid')
 
 squares.forEach(square => {
-    square.addEventListener('click', function(){
+    square.addEventListener('mouseover', function(){
         square.style.backgroundColor = 'black'
     })
 })
