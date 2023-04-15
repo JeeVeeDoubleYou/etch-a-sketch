@@ -6,7 +6,11 @@ body {
 
 h1 {
     margin-top: 2cm;
-    margin-bottom: 1.5cm;
+    margin-bottom: 1cm;
+}
+
+button {
+    margin-top: 1cm;
 }
 .container {
     display: grid;
