@@ -13,3 +13,11 @@ function createGrid(){
 }
 
 createGrid()
+
+const squares = document.querySelectorAll('.grid')
+
+squares.forEach(square => {
+    square.addEventListener('click', function(){
+        square.style.backgroundColor = 'black'
+    })
+})
