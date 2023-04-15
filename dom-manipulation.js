@@ -1,7 +1,6 @@
 const container = document.querySelector('.container')
 
 const div = document.createElement('div')
-div.style.minHeight = '0.5cm'
 div.setAttribute("class", "grid")
 
 function createGrid(){
