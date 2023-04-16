@@ -8,6 +8,14 @@ gridSizeButton.addEventListener('click', changeGridSize)
 
 const toggleButton = document.querySelector('.toggle')
 
+const clearButton = document.querySelector('.clear')
+clearButton.addEventListener('click', function() {
+    const squares = document.querySelectorAll('.grid') 
+    squares.forEach(square => {
+        square.style.backgroundColor = ''
+    })
+})
+
 createGrid(16)
 
 function createGrid(size){
