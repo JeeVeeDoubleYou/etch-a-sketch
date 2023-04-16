@@ -4,6 +4,9 @@ let eraserActivated = false
 let mouseoverActivated = false
 let lastClicked = 'grey'
 
+container.addEventListener('click', toggle)
+toggleButton.addEventListener('click', toggle)
+
 const greyMode = document.querySelector('#grey')
 greyMode.addEventListener('click', function(){
     if (mouseoverActivated) {
@@ -54,7 +57,7 @@ eraser.addEventListener('click', function(){
     lastClicked = 'eraser'
 })
 
-container.addEventListener('click', function(){
+function toggle() {
     mouseoverActivated = !mouseoverActivated
     if (!mouseoverActivated) {
         greyModeActivated = false
@@ -84,4 +87,4 @@ container.addEventListener('click', function(){
             eraser.style.backgroundColor = '#24a0ed'
         }
     }
-})
+}

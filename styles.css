@@ -23,19 +23,9 @@ h1 {
 
 button {
     margin-top: 1cm;
+    margin-left: 0.25cm;
+    margin-right: 0.25cm;
 }
-
-#grey {
-    margin-left: 0.5cm;
- }
-
- #rainbow {
-    margin-left: 0.5cm;
- }
-
- #eraser {
-    margin-left: 0.5cm;
- }
 
  .grid {
     border-style: solid;

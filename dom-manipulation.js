@@ -6,6 +6,8 @@ div.setAttribute("class", "grid")
 const gridSizeButton = document.querySelector('button')
 gridSizeButton.addEventListener('click', changeGridSize)
 
+const toggleButton = document.querySelector('.toggle')
+
 createGrid(16)
 
 function createGrid(size){
