@@ -1,7 +1,7 @@
-let greyModeActivated = true
+let greyModeActivated = false
 let rainbowModeActivated = false
 let eraserActivated = false
-let mouseoverActivated = true
+let mouseoverActivated = false
 let lastClicked = 'grey'
 
 const greyMode = document.querySelector('#grey')
@@ -16,20 +16,20 @@ greyMode.addEventListener('click', function(){
 const rainbowMode = document.querySelector('#rainbow')
 rainbowMode.addEventListener('click', function(){
     if (mouseoverActivated) {
-        if (mouseoverActivated) {
-            greyModeActivated = false
-            rainbowModeActivated = true
-            eraserActivated = false
-        }
+        greyModeActivated = false
+        rainbowModeActivated = true
+        eraserActivated = false
     }
     lastClicked = 'rainbow'
 })
 
 const eraser = document.querySelector('#eraser')
 eraser.addEventListener('click', function(){
-    greyModeActivated = false
-    rainbowModeActivated = false
-    eraserActivated = true
+    if (mouseoverActivated) {
+        greyModeActivated = false
+        rainbowModeActivated = false
+        eraserActivated = true
+    }
     lastClicked = 'eraser'
 })
 
