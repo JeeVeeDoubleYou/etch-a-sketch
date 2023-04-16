@@ -14,7 +14,7 @@ button {
 }
 .container {
     display: grid;
-    grid-template-columns: repeat(16, 1fr);
+    /* grid-template-columns: repeat(16, 1fr); */
     border-bottom: solid;
     border-right: solid;
     height: 10cm;
