@@ -6,6 +6,13 @@ div.setAttribute("class", "grid")
 const gridSizeButton = document.querySelector('button')
 gridSizeButton.addEventListener('click', changeGridSize)
 
+let rainbowModeActivated = false
+
+const rainbowMode = document.querySelector('#rainbow')
+rainbowMode.addEventListener('click', function(){
+    rainbowModeActivated = !rainbowModeActivated
+})
+
 createGrid(16)
 
 function createGrid(size){
@@ -26,7 +33,12 @@ function listenForMouseover() {
     const squares = document.querySelectorAll('.grid') 
     squares.forEach(square => {
         square.addEventListener('mouseover', function(){
-            square.style.backgroundColor = 'black'
+            if (rainbowModeActivated) {
+                square.style.backgroundColor = "#" + ((1 << 24) * Math.random() | 0).toString(16).padStart(6, "0")
+            }
+            else {
+                square.style.backgroundColor = 'black'
+            }
         })
     })
 }
