@@ -8,16 +8,26 @@ gridSizeButton.addEventListener('click', changeGridSize)
 
 let greyModeActivated = true
 let rainbowModeActivated = false
+let eraserActivated = false
 
 const greyMode = document.querySelector('#grey')
 greyMode.addEventListener('click', function(){
     greyModeActivated = true
     rainbowModeActivated = false
+    eraserActivated = false
 })
 const rainbowMode = document.querySelector('#rainbow')
 rainbowMode.addEventListener('click', function(){
     greyModeActivated = false
     rainbowModeActivated = true
+    eraserActivated = false
+})
+
+const eraser = document.querySelector('#eraser')
+eraser.addEventListener('click', function(){
+    greyModeActivated = false
+    rainbowModeActivated = false
+    eraserActivated = true
 })
 
 createGrid(16)
@@ -45,6 +55,9 @@ function listenForMouseover() {
             }
             if (rainbowModeActivated) {
                 square.style.backgroundColor = "#" + ((1 << 24) * Math.random() | 0).toString(16).padStart(6, "0")
+            }
+            if (eraserActivated) {
+                square.style.backgroundColor = ''
             }
         })
     })
