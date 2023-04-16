@@ -3,6 +3,11 @@ const container = document.querySelector('.container')
 const div = document.createElement('div')
 div.setAttribute("class", "grid")
 
+const gridSizeButton = document.querySelector('button')
+gridSizeButton.addEventListener('click', changeGridSize)
+
+createGrid(16)
+
 function createGrid(size){
     container.style.gridTemplateColumns = "repeat(" + size + ", 1fr)";
     while (container.firstChild) {
@@ -17,8 +22,6 @@ function createGrid(size){
     listenForMouseover()
 }
 
-createGrid(16)
-
 function listenForMouseover() {
     const squares = document.querySelectorAll('.grid') 
     squares.forEach(square => {
@@ -28,8 +31,7 @@ function listenForMouseover() {
     })
 }
 
-const gridSizeButton = document.querySelector('button')
-gridSizeButton.addEventListener('click', function(){
+ function changeGridSize() {
     let size = prompt('Please pick how many squares wide the grid should be')
     let gridMade = false
     while (!gridMade) {
@@ -46,4 +48,4 @@ gridSizeButton.addEventListener('click', function(){
             size = prompt("Please pick a number")
         }
     }
-})
+ }
