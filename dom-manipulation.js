@@ -31,5 +31,19 @@ function listenForMouseover() {
 const gridSizeButton = document.querySelector('button')
 gridSizeButton.addEventListener('click', function(){
     let size = prompt('Please pick how many squares wide the grid should be')
-    createGrid(size)
+    let gridMade = false
+    while (!gridMade) {
+        if (!isNaN(size)) {
+            if (size <= 75) {
+                createGrid(size)
+                gridMade = true
+            }
+            else {
+                size = prompt("Please pick a number smaller or equal to 75")
+            }
+        }
+        else {
+            size = prompt("Please pick a number")
+        }
+    }
 })

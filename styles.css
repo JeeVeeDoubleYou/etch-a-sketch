@@ -14,11 +14,10 @@ button {
 }
 .container {
     display: grid;
-    /* grid-template-columns: repeat(16, 1fr); */
     border-bottom: solid;
     border-right: solid;
-    height: 10cm;
-    width: 10cm;
+    height: 12.5cm;
+    width: 12.5cm;
 }
 
 .grid {
