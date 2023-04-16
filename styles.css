@@ -25,3 +25,11 @@ button {
     border-bottom-color: transparent; 
     border-right-color: transparent;
 }
+ .buttons {
+    display: flex;
+    flex-direction: row;
+ } 
+
+ #rainbow {
+    margin-left: 0.5cm;
+ }
