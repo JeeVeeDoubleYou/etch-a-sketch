@@ -2,6 +2,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: linear-gradient(to right,  rgb(124, 193, 234), rgb(237, 107, 129));
 }
 
 h1 {
@@ -14,6 +15,7 @@ h1 {
     border-right: solid;
     height: 12.5cm;
     width: 12.5cm;
+    background-color: white; 
 }
 
 .buttons {
