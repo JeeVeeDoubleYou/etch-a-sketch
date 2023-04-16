@@ -8,9 +8,6 @@ h1 {
     margin-top: 2cm;
 }
 
-button {
-    margin-top: 1cm;
-}
 .container {
     display: grid;
     border-bottom: solid;
@@ -19,24 +16,29 @@ button {
     width: 12.5cm;
 }
 
-.grid {
-    border-style: solid;
-    border-bottom-color: transparent; 
-    border-right-color: transparent;
-}
- .buttons {
+.buttons {
     display: flex;
     flex-direction: row;
  } 
 
- #rainbow {
+button {
+    margin-top: 1cm;
+}
+
+#grey {
     margin-left: 0.5cm;
  }
 
- #grey {
+ #rainbow {
     margin-left: 0.5cm;
  }
 
  #eraser {
     margin-left: 0.5cm;
  }
+
+ .grid {
+    border-style: solid;
+    border-bottom-color: transparent; 
+    border-right-color: transparent;
+}
