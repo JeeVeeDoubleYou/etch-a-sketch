@@ -54,7 +54,7 @@ function listenForMouseover() {
     let gridMade = false
     while (!gridMade) {
         if (!isNaN(size)) {
-            if (size <= 75) {
+            if (size <= 155) {
                 createGrid(size)
                 gridMade = true
             }
