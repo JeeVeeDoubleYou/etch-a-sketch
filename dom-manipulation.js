@@ -10,13 +10,7 @@ const toggleButton = document.querySelector('.toggle')
 
 const customPenButton = document.querySelector('.custom-pen')
 
-const clearButton = document.querySelector('.clear')
-clearButton.addEventListener('click', function() {
-    const squares = document.querySelectorAll('.grid') 
-    squares.forEach(square => {
-        square.style.backgroundColor = ''
-    })
-})
+let blackBackground = false 
 
 const backgroundButton = document.querySelector('.background')
 backgroundButton.addEventListener('click', function() {
@@ -24,6 +18,16 @@ backgroundButton.addEventListener('click', function() {
     squares.forEach(square => {
         square.style.backgroundColor = 'black'
     })
+    blackBackground = true
+})
+
+const clearButton = document.querySelector('.clear')
+clearButton.addEventListener('click', function() {
+    const squares = document.querySelectorAll('.grid') 
+    squares.forEach(square => {
+        square.style.backgroundColor = ''
+    })
+    blackBackground = false
 })
 
 createGrid(16)
@@ -52,7 +56,10 @@ function listenForMouseover() {
             if (rainbowModeActivated) {
                 square.style.backgroundColor = "#" + ((1 << 24) * Math.random() | 0).toString(16).padStart(6, "0")
             }
-            if (eraserActivated) {
+            if (eraserActivated && blackBackground) {
+                square.style.backgroundColor = 'black'
+            }
+            else if (eraserActivated) {
                 square.style.backgroundColor = ''
             }
             if (customPenActivated) {
