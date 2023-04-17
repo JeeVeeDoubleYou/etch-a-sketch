@@ -1,8 +1,10 @@
 let greyModeActivated = false
 let rainbowModeActivated = false
 let eraserActivated = false
+let customPenActivated = false
 let mouseoverActivated = false
 let lastClicked = 'grey'
+let customPenColorPick
 
 container.addEventListener('click', toggle)
 toggleButton.addEventListener('click', toggle)
@@ -13,6 +15,7 @@ greyMode.addEventListener('click', function(){
         greyModeActivated = true
         rainbowModeActivated = false
         eraserActivated = false
+        customPenActivated = false
         greyMode.style.backgroundColor = '#24a0ed'
     }
     else {
@@ -21,6 +24,7 @@ greyMode.addEventListener('click', function(){
     lastClicked = 'grey'
     rainbowMode.style.backgroundColor = ''
     eraser.style.backgroundColor = ''
+    customPenButton.style.backgroundColor = ''
 })
 
 greyMode.style.backgroundColor = 'grey' 
@@ -31,6 +35,7 @@ rainbowMode.addEventListener('click', function(){
         greyModeActivated = false
         rainbowModeActivated = true
         eraserActivated = false
+        customPenActivated = false
         rainbowMode.style.backgroundColor = '#24a0ed'
     }
     else {
@@ -39,6 +44,7 @@ rainbowMode.addEventListener('click', function(){
     lastClicked = 'rainbow'
     greyMode.style.backgroundColor = ''
     eraser.style.backgroundColor = ''
+    customPenButton.style.backgroundColor = ''
 })
 
 const eraser = document.querySelector('#eraser')
@@ -47,6 +53,7 @@ eraser.addEventListener('click', function(){
         greyModeActivated = false
         rainbowModeActivated = false
         eraserActivated = true
+        customPenActivated = false
         eraser.style.backgroundColor = '#24a0ed'
     }
     else {
@@ -54,6 +61,7 @@ eraser.addEventListener('click', function(){
     }
     greyMode.style.backgroundColor = ''
     rainbowMode.style.backgroundColor = ''
+    customPenButton.style.backgroundColor = ''
     lastClicked = 'eraser'
 })
 
@@ -63,6 +71,7 @@ function toggle() {
         greyModeActivated = false
         rainbowModeActivated = false
         eraserActivated = false
+        customPenActivated = false
         if (lastClicked == 'grey') {
             greyMode.style.backgroundColor = 'grey'
         }
@@ -71,6 +80,9 @@ function toggle() {
         }
         if (lastClicked == 'eraser') {
             eraser.style.backgroundColor = 'grey'
+        }
+        if (lastClicked == 'custom') {
+            customPenButton.style.backgroundColor = 'grey'
         }
     }
     else {
@@ -86,5 +98,27 @@ function toggle() {
             eraserActivated = true
             eraser.style.backgroundColor = '#24a0ed'
         }
+        if (lastClicked == 'custom') {
+            customPenActivated = true
+            customPenButton.style.backgroundColor = '#24a0ed'
+        }
     }
 }
+
+customPenButton.addEventListener('click', function(){
+    if (mouseoverActivated) {
+        greyModeActivated = false
+        rainbowModeActivated = false
+        eraserActivated = false
+        customPenActivated = true
+        customPenButton.style.backgroundColor = '#24a0ed'
+    }
+    else {
+        customPenButton.style.backgroundColor = 'grey'
+    }
+    lastClicked = 'custom'
+    greyMode.style.backgroundColor = ''
+    rainbowMode.style.backgroundColor = ''
+    eraser.style.backgroundColor = ''
+    customPenColorPick =  new jscolor(customPenButton);
+})

@@ -8,11 +8,21 @@ gridSizeButton.addEventListener('click', changeGridSize)
 
 const toggleButton = document.querySelector('.toggle')
 
+const customPenButton = document.querySelector('.custom-pen')
+
 const clearButton = document.querySelector('.clear')
 clearButton.addEventListener('click', function() {
     const squares = document.querySelectorAll('.grid') 
     squares.forEach(square => {
         square.style.backgroundColor = ''
+    })
+})
+
+const backgroundButton = document.querySelector('.background')
+backgroundButton.addEventListener('click', function() {
+    const squares = document.querySelectorAll('.grid')
+    squares.forEach(square => {
+        square.style.backgroundColor = 'black'
     })
 })
 
@@ -44,6 +54,9 @@ function listenForMouseover() {
             }
             if (eraserActivated) {
                 square.style.backgroundColor = ''
+            }
+            if (customPenActivated) {
+                square.style.backgroundColor = customPenColorPick
             }
         })
     })
